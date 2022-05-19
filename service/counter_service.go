@@ -32,6 +32,8 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 
 // CounterHandler 计数器接口
 func CounterHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Printf("http path(%s|%s): request_uri:%s, header: %v\n", r.URL.Path, r.URL.RawPath, r.RequestURI, r.Header)
+
 	res := &JsonResult{}
 
 	if r.Method == http.MethodGet {
